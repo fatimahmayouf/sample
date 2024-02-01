@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="info" name="sample" packages="com.fatema.sample">
+
+    <Properties>
+        <Property name="LOG_PATTERN">
+            %style{%d{ISO8601}}{black} %highlight{%-5level }[%style{%t}{bright,blue}] %style{%C}{bright,yellow}: %msg%n%throwable
+        </Property>
+    </Properties>
+
+    <Appenders>
+
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="CONSOLE"/>
+        </Root>
+
+        <Logger name="sun.util.logging.internal" level="ERROR"  additivity="false"/>
+
+    </Loggers>
+</Configuration>
+

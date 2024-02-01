@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:ucanaccess://${DATABASE_PATH}
+    driver-class-name: net.ucanaccess.jdbc.UcanaccessDriver
+    username: ${MICROSOFT_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+  h2:
+    console:
+      enabled: true
+    datasource:
+      url: jdbc:h2:mem:testdb
+#    hibernate:
+#      ddl-auto: update
+server:
+  port: 7072
+session:
+  timeout:
+    minutes: 5
+logging:
+  level:
+    org.springframework.security: DEBUG
